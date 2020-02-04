@@ -1,0 +1,43 @@
+.containerButton {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: #c41d1d;
+  border: 1px solid #c41d1d;
+  background-color: rgba(0, 0, 0, 70%);
+  font-size: 1.2rem;
+  padding: 0px 5px 5px 5px;
+}
+
+.centered {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.leftResponsive {
+  margin-right: auto;
+}
+
+.rightResponsive {
+  margin-left: auto;
+}
+
+.containerButton:hover {
+  background-color: rgba(0, 0, 0, 100%);
+  cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+  .containerButton,
+  .rightResponsive,
+  .leftResponsive {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,48 @@
+.container {
+  background-color: #7f7979;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+  flex-wrap: wrap;
+  color: #dbedf3;
+}
+
+.container img {
+  width: 500px;
+  border-radius: 30px;
+  align-self: center;
+}
+
+.textContainer {
+  width: 500px;
+  word-wrap: break-word;
+  align-self: center;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 40%);
+  padding: 20px;
+}
+
+.slideBlock {
+  width: 100%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 30%);
+  color: #dbedf3;
+}
+
+.slideBlock p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1020px) {
+  .container {
+    padding: 0;
+  }
+}

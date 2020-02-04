@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+}
+
+.textContainer {
+  position: absolute;
+  left: 5%;
+  background-color: rgba(0, 0, 0, 40%);
+  max-width: 1000px;
+  padding: 20px;
+  top: 30%;
+  color: #dbedf3;
+}
+
+.videoBg {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.textContainer h1 {
+  font-size: 3rem;
+}
+
+.textContainer p {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 1020px) {
+  .container {
+    position: static;
+    height: auto;
+    background-image: url("../../assets/images/noVideo.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0px;
+  }
+  .textContainer {
+    position: static;
+    text-align: center;
+  }
+  .videoBg {
+    display: none;
+  }
+  .textContainer h1 {
+    font-size: 2rem;
+  }
+
+  .textContainer p {
+    font-size: 1.2rem;
+  }
+}

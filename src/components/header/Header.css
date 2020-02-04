@@ -1,0 +1,162 @@
+.navBar {
+  display: flex;
+  background-color: rgba(40, 49, 73, 90%);
+  border-bottom: 1px solid #dbedf3;
+}
+
+.navPositionFixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.navPositionStatic {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 60px;
+}
+
+.navBar a {
+  color: #dbedf3;
+  margin: 15px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.navBar a:hover {
+  color: #c41d1d;
+}
+
+.navBar * {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.toggleBtn {
+  display: none;
+}
+
+.navLeft,
+.navRight {
+  display: flex;
+  position: relative;
+  flex: 50%;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+}
+
+.navLeft {
+  justify-content: flex-end;
+}
+
+.navRight {
+  justify-content: flex-start;
+}
+
+.textLogo {
+  justify-self: center;
+  align-self: center;
+  color: #c41d1d;
+  padding: 0;
+  margin: 0;
+}
+
+.logoStatic {
+  display: none;
+}
+
+.logoRelative {
+  width: 200px;
+}
+
+@media (max-width: 1020px) {
+  .toggleBtn {
+    display: flex;
+    text-align: left;
+    background-color: rgba(40, 49, 73, 90%);
+    border-bottom: 1px solid #dbedf3;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggleBtn * {
+    fill: #dbedf3;
+    margin: 15px;
+  }
+  .toggleBtn:active {
+    background-color: rgba(40, 49, 73, 100%);
+  }
+  .toggleBtn:hover {
+    cursor: pointer;
+  }
+  .logoStatic {
+    display: none;
+  }
+  .logoRelative {
+    display: none;
+  }
+  .textLogo {
+    display: none;
+  }
+  .logoMobile {
+    width: 80px;
+  }
+  .navBar {
+    border-bottom: 0px solid #dbedf3;
+    background-color: rgba(40, 49, 73, 0%);
+    margin-bottom: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .navBar,
+  .navLeft,
+  .navRight {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mobileContainer {
+    width: 70%;
+  }
+  .navLeft,
+  .navRight {
+    background-color: #7f7979;
+    text-align: left;
+    border-bottom: 1px solid #7f7979;
+  }
+  .navBar a {
+    color: #dbedf3;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: flex;
+  }
+}
+
+@media (max-width: 308px) {
+  .mobileContainer {
+    width: 100%;
+  }
+  .navLeft,
+  .navRight {
+    text-align: center;
+  }
+}
