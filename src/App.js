@@ -1,27 +1,54 @@
-import React, { useState, useRef, Fragment } from "react";
+import React, { Component, Suspense } from "react";
+import { Route } from "react-router-dom";
 
 import Header from "./components/header/Header";
-import MainBody from "./screens/mainBody/MainBody";
 import css from "./App.css";
 
-function App() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollDiv = useRef();
+const AsyncMainBody = React.lazy(() => import("./screens/mainBody/MainBody"));
 
-  const onScroll = () => {
-    const scrollTop = scrollDiv.current.scrollTop;
-    setScrollPosition(scrollTop);
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrollPosition: 0
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = e => {
+    var scroll = window.scrollY;
+    this.setState({ scrollPosition: scroll });
+    console.log(scroll);
   };
 
-  return (
-    <Fragment>
-      <div ref={scrollDiv} onScroll={onScroll} className={css.app}>
-        <Header scrollPosition={scrollPosition} />
+  setPos = value => {
+    this.setState({ scrollPosition: this.state.scrollPosition + 1 });
 
-        <MainBody />
+    console.log(this.state.scrollPosition);
+  };
+
+  render() {
+    return (
+      <div className={css.app}>
+        <Header scrollPosition={this.state.scrollPosition} />
+        <Route
+          path="/"
+          render={() => (
+            <Suspense fallback={<div>Loading...</div>}>
+              <AsyncMainBody />
+            </Suspense>
+          )}
+        />
       </div>
-    </Fragment>
-  );
+    );
+  }
 }
 
 export default App;

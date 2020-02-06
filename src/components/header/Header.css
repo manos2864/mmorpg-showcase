@@ -1,7 +1,10 @@
 .navBar {
   display: flex;
-  background-color: rgba(40, 49, 73, 90%);
+  background-image: url("../../assets/images/nav-texture.jpg");
+  background-repeat: repeat;
   border-bottom: 1px solid #dbedf3;
+  box-shadow: 0 0 10px black;
+  height: 80px;
 }
 
 .navPositionFixed {
@@ -80,7 +83,20 @@
 }
 
 .logoRelative {
-  width: 200px;
+  position: absolute;
+  top: -25px;
+  left: -20px;
+  max-width: 150px;
+}
+
+@media (max-width: 1192px) {
+  .logoRelative {
+    display: none;
+  }
+
+  .textLogo {
+    display: none;
+  }
 }
 
 @media (max-width: 1020px) {
@@ -114,14 +130,20 @@
   .logoMobile {
     width: 80px;
   }
+
+  .navBar,
+  .navPositionStatic,
+  .navPositionFixed {
+    position: fixed;
+  }
+
   .navBar {
     border-bottom: 0px solid #dbedf3;
     background-color: rgba(40, 49, 73, 0%);
-    margin-bottom: 15px;
-    position: fixed;
     top: 0;
     width: 100%;
   }
+
   .navBar,
   .navLeft,
   .navRight {
@@ -155,6 +177,7 @@
   .mobileContainer {
     width: 100%;
   }
+
   .navLeft,
   .navRight {
     text-align: center;

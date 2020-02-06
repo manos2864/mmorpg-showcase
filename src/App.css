@@ -2,8 +2,7 @@
   padding: 0;
   margin: 0;
   scrollbar-color: #c41d1d black;
-  overflow-y: scroll;
+  /* overflow-y: scroll;
   height: 1000px;
-  max-height: 2000px;
-  scroll-behavior: smooth;
+  max-height: 2000px; */
 }

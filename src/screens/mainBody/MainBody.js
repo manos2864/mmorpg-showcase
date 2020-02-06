@@ -2,6 +2,7 @@ import React from "react";
 import FeatureBlock from "../../components/featureBlock/featureBlock";
 import VideoBlock from "../../components/videoBlock/VideoBlock";
 
+import noVideo from "../../assets/images/noVideo.JPG";
 import css from "./MainBody.css";
 import { text } from "../../constants/text";
 
@@ -25,6 +26,15 @@ const MainBody = () => {
         desc={text.featureBlockContent2}
         image={text.featureBlockImage2}
         background={text.featureBackgroundContent2}
+      />
+      <FeatureBlock
+        isDirectionReversed={true}
+        idName={"covensSection1"}
+        title={text.featureBlockTitle1}
+        desc={text.featureBlockContent1}
+        image={noVideo}
+        background={text.featureBackgroundContent1}
+        detailText={text.featureBlockDetailText1}
       />
     </div>
   );
