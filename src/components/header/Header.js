@@ -12,7 +12,9 @@ const Header = props => {
 
   const navMenu = (
     <Fragment>
-      <div className={[css.navLeft, showNavBar && css.show].join(" ")}>
+      <div
+        className={[css.navLeft, showNavBar ? css.show : css.hide].join(" ")}
+      >
         {props.scrollPosition > 1 && (
           <h1 className={css.textLogo}>Dark Fire</h1>
         )}
@@ -30,7 +32,9 @@ const Header = props => {
         alt="dark fire logo"
         href="/"
       />
-      <div className={[css.navRight, showNavBar && css.show].join(" ")}>
+      <div
+        className={[css.navRight, showNavBar ? css.show : css.hide].join(" ")}
+      >
         <a href="/">Join the War</a>
 
         <a href="/">Trade your Goods</a>
