@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
 import css from "./featureBlock.css";
 import Button from "../button/Button";
-import { Animated } from "react-animated-css";
 import LazyComponent from "../../hoc/lazyComponent/lazyComponent";
+
+import AnimationTransition from "../../hoc/animationTransition/AnimationTransition";
 
 const FeatureBlock = props => {
   const [isAction, setisAction] = useState(false);
@@ -11,7 +12,9 @@ const FeatureBlock = props => {
     setisAction(!isAction);
   };
 
-  const actionBlock = <p>{props.detailText}</p>;
+  const actionBlock = (
+    <div className={css.actionInsideBlock}>{props.detailText}</div>
+  );
 
   return (
     <Fragment>
@@ -23,7 +26,11 @@ const FeatureBlock = props => {
         }}
       >
         <LazyComponent height={500} offset={1}>
-          <img src={props.image} alt={props.title} />
+          <img
+            style={{ top: props.offset }}
+            src={props.image}
+            alt={props.title}
+          />
         </LazyComponent>
 
         <div className={css.textContainer}>
@@ -38,21 +45,21 @@ const FeatureBlock = props => {
           </Button>
         </div>
       </div>
-      {isAction && (
+
+      <AnimationTransition
+        in={isAction}
+        timeout={{ enter: 700, exit: 700 }}
+        enter={css.actionBlockOpen}
+        exit={css.actionBlockClose}
+      >
         <div
-          className={css.slideBlock}
+          className={css.actionBlock}
           onClick={actionHandler}
           id={props.idName}
         >
-          <Animated
-            animationIn="fadeIn"
-            animationInDuration="4000"
-            isVisible={isAction}
-          >
-            {actionBlock}
-          </Animated>
+          {actionBlock}
         </div>
-      )}
+      </AnimationTransition>
     </Fragment>
   );
 };

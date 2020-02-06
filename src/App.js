@@ -25,7 +25,6 @@ class App extends Component {
   handleScroll = e => {
     var scroll = window.scrollY;
     this.setState({ scrollPosition: scroll });
-    console.log(scroll);
   };
 
   setPos = value => {
