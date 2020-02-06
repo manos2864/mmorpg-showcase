@@ -5,6 +5,7 @@ import css from "./Header.css";
 import logo from "../../assets/images/logo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
+import BackDrop from "../backDrop/BackDrop";
 
 import AnimationTransition from "../../hoc/animationTransition/AnimationTransition";
 
@@ -102,6 +103,7 @@ const Header = props => {
         props.scrollPosition > 1 ? css.navPositionStatic : css.navPositionFixed
       ].join(" ")}
     >
+      <BackDrop isOpen={showNavBar} onClick={toggleNavBar} />
       <div onClick={toggleNavBar} className={css.toggleBtn}>
         {!showNavBar ? (
           <MenuIcon style={{ fontSize: "2.5rem" }} />

@@ -11,6 +11,7 @@
   padding: 25px;
   flex-wrap: wrap;
   color: #dbedf3;
+  z-index: 1;
 }
 
 .container img {
@@ -30,13 +31,13 @@
 }
 
 .actionBlock {
+  z-index: 0;
   width: 100%;
   cursor: pointer;
   color: #dbedf3;
 }
 
 .actionBlock .actionInsideBlock {
-  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }

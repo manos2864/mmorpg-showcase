@@ -1,0 +1,42 @@
+.classesContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  background-color: #350606;
+  background-image: url(../../assets/images/patterns/dark-exa.png);
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #5f5b6b;
+  border-radius: 8px;
+  color: #dbedf3;
+  text-align: center;
+  box-shadow: 0 0 5px black;
+}
+
+.card h1 {
+  background-color: rgba(0, 0, 0, 80%);
+}
+
+.card p {
+  text-align: left;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 80%);
+}
+@media (max-width: 1020px) {
+  .card {
+    flex: 100%;
+    border: none;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .card p {
+    text-align: center;
+  }
+}

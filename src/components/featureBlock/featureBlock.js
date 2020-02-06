@@ -13,7 +13,7 @@ const FeatureBlock = props => {
   };
 
   const actionBlock = (
-    <div className={css.actionInsideBlock}>{props.detailText}</div>
+    <div className={css.actionInsideBlock}>{props.detailComponent}</div>
   );
 
   return (
@@ -54,6 +54,7 @@ const FeatureBlock = props => {
       >
         <div
           className={css.actionBlock}
+          style={{ maxWidth: props.containerWidth }}
           onClick={actionHandler}
           id={props.idName}
         >
