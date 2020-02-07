@@ -9,4 +9,4 @@ const BackDrop = props => {
   );
 };
 
-export default BackDrop;
+export default React.memo(BackDrop);

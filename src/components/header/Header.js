@@ -26,14 +26,12 @@ const Header = props => {
 
         <a href="/">Eternal Fight</a>
       </div>
-
       <img
         className={props.scrollPosition > 1 ? css.logoStatic : css.logoRelative}
         src={logo}
         alt="dark fire logo"
         href="/"
       />
-
       <div className={css.navRight}>
         <a href="/">Join the War</a>
 
@@ -55,9 +53,6 @@ const Header = props => {
         exit={css.navSlideClose}
       >
         <div className={css.navLeft}>
-          {props.scrollPosition > 1 && (
-            <h1 className={css.textLogo}>Dark Fire</h1>
-          )}
           <a href="/">Home</a>
 
           <a href="/">Step into the Covens</a>
@@ -67,12 +62,6 @@ const Header = props => {
           <a href="/">Eternal Fight</a>
         </div>
       </AnimationTransition>
-      <img
-        className={props.scrollPosition > 1 ? css.logoStatic : css.logoRelative}
-        src={logo}
-        alt="dark fire logo"
-        href="/"
-      />
       <AnimationTransition
         in={showNavBar}
         timeout={{ enter: 400, exit: 400 }}
@@ -123,4 +112,4 @@ const Header = props => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

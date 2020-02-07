@@ -14,12 +14,13 @@
 
 .navPositionFixed {
   position: fixed;
+  margin-left: auto;
+  margin-right: auto;
   left: 0;
   right: 0;
   top: 30px;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 1200px;
+  border-radius: 0px 10px 10px 0px;
   z-index: 2;
 }
 
@@ -33,15 +34,69 @@
   margin-right: auto;
   left: 0;
   right: 0;
-  z-index: 2;
   height: 60px;
+  z-index: 2;
 }
+
+/* .navGotoTop {
+  animation: goToTop 0.3s ease-out forwards;
+}
+.navGotoNormal {
+  animation: goToNormal 0.3s ease-out forwards;
+}
+@keyframes goToTop {
+  0% {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+    max-width: 1200px;
+    z-index: 2;
+  }
+  100% {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 2;
+  }
+}
+@keyframes goToNormal {
+  0% {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 2;
+  }
+  100% {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+    max-width: 1200px;
+    z-index: 2;
+  }
+} */
 
 .navBar a {
   color: #dbedf3;
-  margin: 15px;
+  padding: 15px;
   white-space: nowrap;
   text-decoration: none;
+  border-right: 1px solid #7f7979;
+}
+
+.navBar .navRight a:last-child {
+  border-right: 0px;
 }
 
 .navBar a:hover {
@@ -101,6 +156,10 @@
 @media (max-width: 1192px) {
   .logoRelative {
     display: none;
+  }
+
+  .navPositionFixed {
+    border-radius: 0px;
   }
 
   .textLogo {
@@ -176,7 +235,7 @@
     width: 300px;
   }
   .navRight {
-    top: 335px;
+    top: 343px;
   }
   .navLeft {
     top: 105px;
@@ -186,7 +245,14 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     white-space: normal;
+    border-right: 0px;
+    border-bottom: 1px solid black;
   }
+
+  .navBar .navRight a:last-child {
+    border-bottom: 0px;
+  }
+
   .navSlideOpen {
     animation: openNav 0.3s ease-out forwards;
   }

@@ -48,4 +48,4 @@ const HeroesClasses = props => {
   );
 };
 
-export default HeroesClasses;
+export default React.memo(HeroesClasses);

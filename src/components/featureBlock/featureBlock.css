@@ -12,6 +12,7 @@
   flex-wrap: wrap;
   color: #dbedf3;
   z-index: 1;
+  border-bottom: 5px solid black;
 }
 
 .container img {

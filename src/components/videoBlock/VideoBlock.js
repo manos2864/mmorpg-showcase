@@ -26,4 +26,4 @@ const VideoBlock = () => {
   );
 };
 
-export default VideoBlock;
+export default React.memo(VideoBlock);

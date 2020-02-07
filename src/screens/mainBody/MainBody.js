@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import FeatureBlock from "../../components/featureBlock/featureBlock";
 import VideoBlock from "../../components/videoBlock/VideoBlock";
 import HeroesClasses from "../../components/heroesClasses/HeroesClasses";
@@ -6,7 +6,15 @@ import HeroesClasses from "../../components/heroesClasses/HeroesClasses";
 import css from "./MainBody.css";
 import { content } from "../../constants/content";
 
+import { getTopPVP } from "../../data/fetching";
+
 const MainBody = () => {
+  const [getPvPStats, setPvPStats] = useState("");
+
+  useEffect(() => {
+    getTopPVP(setPvPStats);
+  }, []);
+
   return (
     <div className={css.container}>
       <VideoBlock />
@@ -25,6 +33,7 @@ const MainBody = () => {
           </>
         }
       />
+      {console.log(getPvPStats)}
       <FeatureBlock
         isDirectionReversed={false}
         offset={"25px"}
@@ -40,4 +49,4 @@ const MainBody = () => {
   );
 };
 
-export default MainBody;
+export default React.memo(MainBody);
