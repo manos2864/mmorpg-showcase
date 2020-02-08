@@ -51,6 +51,8 @@ const Header = props => {
         timeout={{ enter: 400, exit: 400 }}
         enter={css.navSlideOpen}
         exit={css.navSlideClose}
+        mountOnEnter={true}
+        unmountOnExit={true}
       >
         <div className={css.navLeft}>
           <a href="/">Home</a>
@@ -67,6 +69,8 @@ const Header = props => {
         timeout={{ enter: 400, exit: 400 }}
         enter={css.navSlideOpen}
         exit={css.navSlideClose}
+        mountOnEnter={true}
+        unmountOnExit={true}
       >
         <div className={css.navRight}>
           <a href="/">Join the War</a>
@@ -86,29 +90,38 @@ const Header = props => {
   };
 
   return (
-    <header
-      className={[
-        css.navBar,
-        props.scrollPosition > 1 ? css.navPositionStatic : css.navPositionFixed
-      ].join(" ")}
+    <AnimationTransition
+      in={props.scrollPosition > 1}
+      timeout={{ appear: 700, enter: 700, exit: 700 }}
+      enter={css.navGotoTop}
+      exit={css.navGotoNormal}
     >
-      <BackDrop isOpen={showNavBar} onClick={toggleNavBar} />
-      <div onClick={toggleNavBar} className={css.toggleBtn}>
-        {!showNavBar ? (
-          <MenuIcon style={{ fontSize: "2.5rem" }} />
-        ) : (
-          <CloseIcon style={{ fontSize: "2.5rem" }} />
-        )}
-        <img
-          className={css.logoMobile}
-          src={logo}
-          alt="dark fire logo"
-          href="/"
-        />
-      </div>
-      <div className={css.desktopContainer}>{navMenuDesktop}</div>
-      <div className={css.mobileContainer}>{navMenuMobile}</div>
-    </header>
+      <header
+        className={[
+          css.navBar,
+          props.scrollPosition > 1
+            ? css.navPositionStatic
+            : css.navPositionFixed
+        ].join(" ")}
+      >
+        <BackDrop isOpen={showNavBar} onClick={toggleNavBar} />
+        <div onClick={toggleNavBar} className={css.toggleBtn}>
+          {!showNavBar ? (
+            <MenuIcon style={{ fontSize: "2.5rem" }} />
+          ) : (
+            <CloseIcon style={{ fontSize: "2.5rem" }} />
+          )}
+          <img
+            className={css.logoMobile}
+            src={logo}
+            alt="dark fire logo"
+            href="/"
+          />
+        </div>
+        <div className={css.desktopContainer}>{navMenuDesktop}</div>
+        <div className={css.mobileContainer}>{navMenuMobile}</div>
+      </header>
+    </AnimationTransition>
   );
 };
 

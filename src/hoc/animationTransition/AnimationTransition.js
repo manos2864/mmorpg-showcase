@@ -7,9 +7,10 @@ const AnimationTransition = props => {
     <CSSTransition
       in={props.in}
       timeout={props.timeout}
-      mountOnEnter
-      unmountOnExit
+      mountOnEnter={props.mountOnEnter}
+      unmountOnExit={props.unmountOnExit}
       classNames={{
+        appear: props.appear,
         enter: props.enter,
         enterActive: props.enterActive,
         exit: props.exit,

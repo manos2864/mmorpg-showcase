@@ -51,6 +51,8 @@ const FeatureBlock = props => {
         timeout={{ enter: 700, exit: 700 }}
         enter={css.actionBlockOpen}
         exit={css.actionBlockClose}
+        mountOnEnter={true}
+        unmountOnExit={true}
       >
         <div
           className={css.actionBlock}
