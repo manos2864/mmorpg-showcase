@@ -19,7 +19,7 @@ export const content = {
 
   featureBlockTitle2: "Be the Hero that you Want",
   featureBlockContent2:
-    "Choose among 8 classes. Every class is distinct with paths between Light and Darkness to choose from. Find the mystical ancient objects, to infuse your skills and obtain more power. Be aware that more power bring more sacrifices. Can you control all of this power?",
+    "Choose among 8 classes. Every class is distinct with paths between Light and Darkness to choose from. Find the mystical ancient objects, to infuse your skills and obtain more power. Be aware that more power bring more sacrifices. Can you control it?",
   featureBlockImage2: paladin,
   featureBackgroundContent2: townBackground,
   classBlockFighterTitle: "Fighter Path",

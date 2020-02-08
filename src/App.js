@@ -2,6 +2,8 @@ import React, { Component, Suspense } from "react";
 import { Route } from "react-router-dom";
 
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+
 import css from "./App.css";
 
 const AsyncMainBody = React.lazy(() => import("./screens/mainBody/MainBody"));
@@ -45,6 +47,7 @@ class App extends Component {
             </Suspense>
           )}
         />
+        <Footer />
       </div>
     );
   }

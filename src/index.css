@@ -1,8 +1,14 @@
 html {
-  scrollbar-color: #c41d1d black;
+  scrollbar-color: #c41d1d black; /* firefox */
   scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+  background: black;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #c41d1d;
+}
 body {
   font-family: "Oswald", sans-serif;
   background-color: black;
@@ -17,7 +23,13 @@ h1 {
   text-shadow: 0px 0px 1px black;
 }
 
-p {
+h2 {
+  font-size: 1.8rem;
+  text-shadow: 0px 0px 1px black;
+}
+
+p,
+li {
   font-size: 1.2rem;
   text-shadow: 0px 0px 1px black;
 }
