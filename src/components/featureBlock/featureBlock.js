@@ -19,6 +19,7 @@ const FeatureBlock = props => {
   return (
     <Fragment>
       <div
+        id={props.blockID}
         className={css.container}
         style={{
           backgroundImage: `url(${props.background})`,

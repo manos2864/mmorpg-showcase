@@ -1,0 +1,18 @@
+.active {
+  color: #c41d1d !important;
+}
+
+.disabled {
+  color: grey !important;
+}
+
+@media (max-width: 1192px) {
+  .active {
+    color: #dbedf3 !important;
+    background-color: #c41d1d;
+  }
+  .disabled {
+    color: lightgrey !important;
+    background-color: rgb(90, 90, 90);
+  }
+}

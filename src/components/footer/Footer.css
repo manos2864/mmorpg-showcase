@@ -25,6 +25,10 @@
   font-size: 3.5rem;
 }
 
+.top svg:hover {
+  color: rgba(196, 29, 29, 40%);
+}
+
 .top > * {
   padding: 10px;
 }
@@ -50,6 +54,10 @@
   bottom: 0;
 }
 
+.bottom p {
+  font-size: 1rem;
+}
+
 li {
   text-decoration: none;
   list-style: none;
@@ -60,6 +68,7 @@ li {
 
 li:hover {
   cursor: pointer;
+  color: #c41d1d;
 }
 
 li:last-child {

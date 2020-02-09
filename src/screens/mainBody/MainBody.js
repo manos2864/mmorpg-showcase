@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import FeatureBlock from "../../components/featureBlock/featureBlock";
 import VideoBlock from "../../components/videoBlock/VideoBlock";
 import HeroesClasses from "../../components/heroesClasses/HeroesClasses";
@@ -6,21 +6,14 @@ import HeroesClasses from "../../components/heroesClasses/HeroesClasses";
 import css from "./MainBody.css";
 import { content } from "../../constants/content";
 
-import { getTopPVP } from "../../data/fetching";
-
-const MainBody = () => {
-  const [getPvPStats, setPvPStats] = useState("");
-
-  useEffect(() => {
-    getTopPVP(setPvPStats);
-  }, []);
-
+const MainBody = props => {
   return (
     <div className={css.container}>
       <VideoBlock />
       <FeatureBlock
         isDirectionReversed={true}
         idName={"covensSection"}
+        blockID={"covenBlock"}
         title={content.featureBlockTitle1}
         desc={content.featureBlockContent1}
         image={content.featureBlockImage1}
@@ -33,11 +26,12 @@ const MainBody = () => {
           </>
         }
       />
-      {console.log(getPvPStats)}
+      {console.log(props.getPvPStats)}
       <FeatureBlock
         isDirectionReversed={false}
         offset={"25px"}
         idName={"classSection"}
+        blockID={"classBlock"}
         title={content.featureBlockTitle2}
         desc={content.featureBlockContent2}
         image={content.featureBlockImage2}

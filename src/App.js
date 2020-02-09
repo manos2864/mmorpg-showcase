@@ -1,23 +1,30 @@
 import React, { Component, Suspense } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
 import css from "./App.css";
+import { getTopPVP } from "./data/fetching";
+import Loading from "./components/loading/Loading";
 
 const AsyncMainBody = React.lazy(() => import("./screens/mainBody/MainBody"));
+const AsyncUnderConstruction = React.lazy(() =>
+  import("./screens/underConstruction/UnderConstruction")
+);
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollPosition: 0
+      scrollPosition: 0,
+      PvPStats: {}
     };
   }
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    getTopPVP(e => this.setState({ ...this.state, PvPStats: e }));
   }
 
   componentWillUnmount() {
@@ -26,27 +33,71 @@ class App extends Component {
 
   handleScroll = e => {
     var scroll = window.scrollY;
-    this.setState({ scrollPosition: scroll });
-  };
-
-  setPos = value => {
-    this.setState({ scrollPosition: this.state.scrollPosition + 1 });
-
-    console.log(this.state.scrollPosition);
+    this.setState({ ...this.state, scrollPosition: scroll });
   };
 
   render() {
     return (
       <div className={css.app}>
         <Header scrollPosition={this.state.scrollPosition} />
-        <Route
-          path="/"
-          render={() => (
-            <Suspense fallback={<div>Loading...</div>}>
-              <AsyncMainBody />
-            </Suspense>
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Suspense fallback={<Loading />}>
+                <AsyncMainBody getPvPStats={this.state.PvPStats} />
+              </Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/eternal-fight"
+            render={() => (
+              <Suspense fallback={<Loading />}>
+                <AsyncUnderConstruction />
+              </Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/join-the-war"
+            render={() => (
+              <Suspense fallback={<Loading />}>
+                <AsyncUnderConstruction />
+              </Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/trade-your-goods"
+            render={() => (
+              <Suspense fallback={<Loading />}>
+                <AsyncUnderConstruction />
+              </Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/hunt-or-haunted"
+            render={() => (
+              <Suspense fallback={<Loading />}>
+                <AsyncUnderConstruction />
+              </Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/pricing"
+            render={() => (
+              <Suspense fallback={<Loading />}>
+                <AsyncUnderConstruction />
+              </Suspense>
+            )}
+          />
+          <Route render={() => <h1>404 Error</h1>} />
+        </Switch>
+
         <Footer />
       </div>
     );
