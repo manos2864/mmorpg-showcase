@@ -1,8 +1,9 @@
 export const getTopPVP = setPvPStats => {
-  fetch("https://my-json-server.typicode.com/typicode/demo/comments", {
+  fetch("https://api-v3.igdb.com/games/", {
     method: "GET",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "user-key": "no-key-here"
     }
   })
     .then(response => response.json())

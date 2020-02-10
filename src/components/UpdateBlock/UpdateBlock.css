@@ -1,0 +1,37 @@
+.container {
+  margin: 10px 0px 15px 0px;
+}
+
+.containerUpdate {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  width: 150px;
+  text-align: center;
+  border-bottom: 1px solid #c41d1d;
+  padding: 0;
+  margin: 10px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #c41d1d;
+}
+
+.newsText {
+  text-align: center;
+}
+
+.newsText p {
+  color: #c41d1d;
+}
+
+@media (max-width: 768px) {
+  .container h1 {
+    border: 1px solid #c41d1d;
+    border-radius: 8px;
+  }
+}

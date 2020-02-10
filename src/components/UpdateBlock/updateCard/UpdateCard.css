@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 250px;
+  margin: 20px 10px;
+  justify-content: flex-end;
+}
+.insideContainer {
+  margin: 0;
+  padding: 0px 10px 10px 10px;
+}
+.insideContainer .shortDesc {
+  margin: 0;
+  padding: 0;
+  color: #dbedf3;
+  border-bottom: 1px solid #dbedf3;
+}
+.insideContainer .desc {
+  margin: 0;
+  padding: 0;
+  color: #c41d1d;
+}
+
+@media (max-width: 1020px) {
+  .container {
+    margin: 20px 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}

@@ -5,7 +5,6 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
 import css from "./App.css";
-import { getTopPVP } from "./data/fetching";
 import Loading from "./components/loading/Loading";
 
 const AsyncMainBody = React.lazy(() => import("./screens/mainBody/MainBody"));
@@ -17,14 +16,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollPosition: 0,
-      PvPStats: {}
+      scrollPosition: 0
     };
   }
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-    getTopPVP(e => this.setState({ ...this.state, PvPStats: e }));
   }
 
   componentWillUnmount() {
@@ -46,7 +43,7 @@ class App extends Component {
             path="/"
             render={() => (
               <Suspense fallback={<Loading />}>
-                <AsyncMainBody getPvPStats={this.state.PvPStats} />
+                <AsyncMainBody />
               </Suspense>
             )}
           />

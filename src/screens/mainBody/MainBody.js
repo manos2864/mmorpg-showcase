@@ -2,6 +2,7 @@ import React from "react";
 import FeatureBlock from "../../components/featureBlock/featureBlock";
 import VideoBlock from "../../components/videoBlock/VideoBlock";
 import HeroesClasses from "../../components/heroesClasses/HeroesClasses";
+import UpdateBlock from "../../components/UpdateBlock/UpdateBlock";
 
 import css from "./MainBody.css";
 import { content } from "../../constants/content";
@@ -26,7 +27,6 @@ const MainBody = props => {
           </>
         }
       />
-      {console.log(props.getPvPStats)}
       <FeatureBlock
         isDirectionReversed={false}
         offset={"25px"}
@@ -39,6 +39,7 @@ const MainBody = props => {
         containerWidth={"100%"}
         detailComponent={<HeroesClasses />}
       />
+      <UpdateBlock />
     </div>
   );
 };
